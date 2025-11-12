@@ -24,7 +24,7 @@ class Film:
     def __str__(self):
         """Zwraca string w formacie: 'Tytuł (Rok)'"""
         return f"{self.title} ({self.year})"
-    
+    # nic ciekawego
 class Series:
     """Klasa reprezentująca serial"""
     
