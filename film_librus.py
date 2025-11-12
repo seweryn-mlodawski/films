@@ -49,10 +49,10 @@ class Series:
     def play(self):
         """Zwiększa liczbę odtworzeń o 1"""
         self.play_count += 1
-
-    def __str__(self):
-        """Zwraca string w formacie: 'Tytuł (Rok) - Sezon: X, Odcinek: Y'"""
-        return f"{self.title} ({self.year}) - Sezon(S): {self.season_number}, Odcinek(E): {self.episode_number}"
+    
+    def __str__(self): 
+        """Zwraca string w formacie: 'Tytuł S01E05'"""
+        return f"{self.title} ({self.year}) - S{self.season_number}E{self.episode_number:02d}"
     
     # Główna część programu
 if __name__ == "__main__":
@@ -98,6 +98,3 @@ if __name__ == "__main__":
         print(f"Rok wydania: {item.year}")
         print(f"Liczba odtworzeń: {item.play_count}")
         print()
-
-
-            
