@@ -98,3 +98,5 @@ if __name__ == "__main__":
         print(f"Rok wydania: {item.year}")
         print(f"Liczba odtworzeń: {item.play_count}")
         print()
+
+        #endofline
