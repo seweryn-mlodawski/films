@@ -28,7 +28,7 @@ class Film:
 class Series:
     """Klasa reprezentująca serial"""
     
-    def __init__(self, title, year, genre, episode_number, season_number):
+    def __init__(self, title, year, genre, season_number, episode_number):
         """
         Inicjalizacja serialu
         
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     
     # Dodawanie seriali
     series1 = Series("Stranger Things", 2016, "Horror", 1, 1)
-    series2 = Series("Breaking Bad", 2008, "Kryminał", 1, 1)
+    series2 = Series("Breaking Bad", 2008, "Kryminał", 2, 1)
     series3 = Series("The Crown", 2016, "Dramat", 1, 1)
 
     library.append(film1)
