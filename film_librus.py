@@ -52,7 +52,7 @@ class Series:
     
     def __str__(self): 
         """Zwraca string w formacie: 'Tytuł S01E05'"""
-        return f"{self.title} ({self.year}) - S{self.season_number}E{self.episode_number:02d}"
+        return f"{self.title} ({self.year}) - S{self.season_number:02d}E{self.episode_number:02d}"
     
     # Główna część programu
 if __name__ == "__main__":
@@ -97,7 +97,4 @@ if __name__ == "__main__":
         print(f"Gatunek: {item.genre}")
         print(f"Rok wydania: {item.year}")
         print(f"Liczba odtworzeń: {item.play_count}")
-        print()
-
-        #endofline
-        # line2
+        print()    
