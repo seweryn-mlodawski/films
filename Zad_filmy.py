@@ -7,7 +7,7 @@ class Film:
         self.title = title
         self.year = year
         self.genre = genre
-        self.play_count = 0
+        self.play_count = 0 # Liczba odtworzeń
 
     def play(self):
         """Zwiększa liczbę odtworzeń o 1"""
@@ -81,13 +81,13 @@ def top_titles(library, n=3, content_type=None):
 # === GŁÓWNA CZĘŚĆ PROGRAMU ===
 
 if __name__ == "__main__":
-    # 1. Komunikat powitalny
+    # Komunikat powitalny
     print('''
 =================
 Biblioteka filmów
 =================''')
 
-    # 2. Wypełnianie biblioteki treścią
+    # Wypełnianie biblioteki treścią
     library = []
     
     library.append(Film("Pulp Fiction", 1994, "Kryminał"))
@@ -100,14 +100,35 @@ Biblioteka filmów
     library.append(Series("Stranger Things", 2016, "Horror", 4, 1))
     library.append(Series("The Crown", 2016, "Dramat", 1, 1))
 
-    # 3. Generowanie odtworzeń
+    # Generowanie odtworzeń
     run_generate_views_10_times(library)
 
-    # 4. Wyświetlanie komunikatu z datą
+    # Wyświetlanie komunikatu z datą
     current_date = datetime.datetime.now().strftime("%d.%m.%Y")
     print(f"\nNajpopularniejsze filmy i seriale dnia {current_date}\n")
 
-    # 5. Wyświetlanie Top 3
+    # Wyświetlanie Top 3
     top_3 = top_titles(library, n=3)
     for item in top_3:
         print(f"{item} - {item.play_count} odtworzeń")
+
+    # Wyświetlanie z funkcji get_movies i get_series
+    
+    print("\n---Dodatkowe informacje i funkcje:---")
+
+    print("\nFilmy w bibliotece posortowane alfabetycznie:")
+    for movie in get_movies(library):
+        print(movie)
+    print("\nSeriale w bibliotece posortowane alfabetycznie:")
+    for series in get_series(library):
+        print(series)
+
+    # Wyszukiwanie
+    search_title = input("\nWpisz tytuł do wyszukania (Enter = wszystko): ")
+    results = search(library, search_title)
+    if results:
+        print("\nZnalezione tytuły:")
+        for item in results:
+            print(item)
+    else:
+        print("Brak wyników wyszukiwania.")
